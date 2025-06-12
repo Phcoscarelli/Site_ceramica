@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="pt-BR" style="scroll-behavior: smooth;">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cerâmica Friburgo - Blocos Cerâmicos e Canaletas</title>
+    <!-- Carrega o Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Configuração do Tailwind para usar a fonte Inter e cores personalizadas -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        inter: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        primaryOrange: '#E65100', // Laranja terroso (terracota)
+                        darkContrast: '#212121', // Cinza muito escuro para texto
+                        lightBackground: '#F5F5DC', // Bege claro (argila/areia)
+                        accentOrange: '#FF9800', // Laranja um pouco mais claro para acentos
+                        earthyGreen: '#5A6F4E', // Verde musgo/oliva (natureza)
+                        richBrown: '#7A4A35', // Marrom profundo (terra, barro)
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Link para a fonte Inter do Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(to bottom, theme('colors.lightBackground') 0%, theme('colors.richBrown') 100%);
+            background-attachment: fixed;
+            color: theme('colors.darkContrast');
+        }
+        .logo-text {
+            font-weight: 700;
+            font-size: 2.5rem; /* Mantido o tamanho maior para destaque */
+            line-height: 1;
+            color: white;
+            letter-spacing: -0.05em;
+        }
+        .slogan-text {
+            font-weight: 400;
+            font-size: 0.95rem; /* Mantido o tamanho levemente aumentado */
+            color: white;
+            opacity: 0.8;
+        }
+        .nav-link {
+            transition: all 0.2s ease-in-out;
+            padding: 0.6rem 0.9rem;
+        }
+        .nav-link:hover {
+            color: theme('colors.accentOrange');
+            transform: translateY(-2px);
+        }
+        main {
+            background-color: white;
+        }
+        .product-block-content {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 100%;
+        }
+        .form-input {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid theme('colors.gray.300');
+            border-radius: 0.375rem; /* rounded-md */
+            margin-bottom: 1rem;
+            font-size: 1rem;
+            color: theme('colors.darkContrast');
+            background-color: theme('colors.lightBackground');
+        }
+        .form-input:focus {
+            outline: none;
+            border-color: theme('colors.primaryOrange');
+            box-shadow: 0 0 0 2px rgba(230, 81, 0, 0.2);
+        }
+    </style>
+</head>
+<body class="flex flex-col min-h-screen">
+
+    <!-- Cabeçalho (Header) -->
+    <header class="bg-primaryOrange text-white shadow-lg py-3 px-4 md:py-5 md:px-6 rounded-b-lg">
+        <div class="container mx-auto flex flex-col md:flex-row items-center justify-between">
+            <!-- Logo e Slogan -->
+            <div class="text-center md:text-left mb-3 md:mb-0">
+                <h1 class="logo-text">CERAMICA FRIBURGO</h1>
+                <p class="slogan-text">BLOCOS CERÂMICOS E CANALETAS</p>
+            </div>
+
+            <!-- Informações de Contato e Navegação -->
+            <div class="flex flex-col items-end space-y-3 md:space-y-0">
+                <!-- Orçamento / Telefone -->
+                <div class="flex items-center justify-end text-right space-x-2 mb-2 md:mb-0">
+                    <p class="text-lg font-semibold whitespace-nowrap">ORÇAMENTOS:</p>
+                    <a href="tel:+5519993369208" class="text-2xl font-bold text-white hover:text-accentOrange transition-colors duration-200 whitespace-nowrap">
+                        (19)99336-9208
+                    </a>
+                </div>
+
+                <!-- Navegação - LINKS PARA SEÇÕES DA MESMA PÁGINA -->
+                <nav class="w-full md:w-auto">
+                    <ul class="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-6 text-lg font-medium">
+                        <li><a href="#home" class="nav-link text-white hover:text-accentOrange rounded-md">HOME</a></li>
+                        <li><a href="#empresa" class="nav-link text-white hover:text-accentOrange rounded-md">EMPRESA</a></li>
+                        <li><a href="produtos.html" class="nav-link text-white hover:text-accentOrange rounded-md">PRODUTOS</a></li>
+                        <li><a href="#contato" class="nav-link text-white hover:text-accentOrange rounded-md">CONTATO</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Conteúdo Principal (Main Content) -->
+    <main class="flex-grow container mx-auto p-6 md:p-8 my-8 bg-white rounded-lg shadow-md">
+        <!-- Seção Home / Boas-Vindas (Originalmente a primeira seção de conteúdo) -->
+        <section id="home" class="text-center py-12">
+            <h2 class="text-4xl font-bold text-primaryOrange mb-6">Bem-vindo à Cerâmica Friburgo!</h2>
+            <p class="text-lg text-gray-700 max-w-3xl mx-auto leading-relaxed">
+                Somos especialistas na fabricação de blocos cerâmicos com mais de 30 anos no mercado, ideais para a sua construção.
+                Garantimos ótimos produtos. Explore nossos produtos e entre em contato para um orçamento sem compromisso!
+            </p>
+            <div class="mt-8">
+                <a href="produtos.html" class="inline-block bg-earthyGreen text-white text-xl font-semibold py-3 px-8 rounded-full shadow-lg hover:bg-primaryOrange transition-all duration-300 transform hover:scale-105">
+                    Ver Produtos
+                </a>
+            </div>
+        </section>
+
+        <!-- Seção Nossa Empresa -->
+        <section id="empresa" class="py-12 border-t border-gray-200 mt-12">
+            <h2 class="text-4xl font-bold text-primaryOrange text-center mb-6">Nossa Empresa</h2>
+            <div class="flex flex-col md:flex-row items-center gap-8">
+                <div class="md:w-1/2">
+                    <img src="https://placehold.co/600x400/7A4A35/FFFFFF?text=Sobre+a+Empresa" alt="Imagem da Empresa" class="rounded-lg shadow-md w-full h-auto object-cover">
+                </div>
+                <div class="md:w-1/2 text-gray-700 leading-relaxed text-lg">
+                    <p class="mb-4">
+                        Com mais de 30 anos de história, a Cerâmica Friburgo se consolidou como referência na fabricação de blocos cerâmicos.
+                        Nossa trajetória é marcada pela busca incessante por qualidade, inovação e sustentabilidade em todos os processos.
+                    </p>
+                    <p class="mb-4">
+                        Nosso compromisso é oferecer soluções construtivas que superem as expectativas de nossos clientes,
+                        contribuindo para a solidez e durabilidade de seus projetos. Contamos com uma equipe experiente e tecnologia de ponta.
+                    </p>
+                    <p>
+                        Acreditamos na construção de parcerias duradouras e no impacto positivo que nossos produtos geram na sociedade.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção Produtos Detalhada (mantendo os 6 blocos) -->
+        <section id="produtos" class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12 py-12 border-t border-gray-200">
+            <h2 class="col-span-1 md:col-span-2 text-4xl font-bold text-primaryOrange text-center mb-6">Nossos Produtos</h2>
+
+            <!-- Bloco 1: Blocos Cerâmicos Estruturais -->
+            <div class="bg-lightBackground p-6 rounded-lg shadow-sm border border-richBrown product-block-content">
+                <div>
+                    <h3 class="text-2xl font-bold text-darkContrast mb-4">Blocos Cerâmicos Estruturais</h3>
+                    <p class="text-gray-600 leading-relaxed mb-4">
+                        Nossos blocos cerâmicos são produzidos com matéria-prima selecionada, garantindo resistência e um excelente isolamento térmico e acústico para sua obra.
+                        Utilizamos processos modernos para assegurar a consistência e a alta performance em cada peça.
+                    </p>
+                </div>
+                <img src="https://placehold.co/600x350/E65100/FFFFFF?text=Blocos+Estruturais" alt="Imagem de Blocos Cerâmicos Estruturais" class="rounded-md w-full h-auto object-cover mt-4">
+            </div>
+
+            <!-- Bloco 2: Canaletas Cerâmicas -->
+            <div class="bg-lightBackground p-6 rounded-lg shadow-sm border border-richBrown product-block-content">
+                <div>
+                    <h3 class="text-2xl font-bold text-darkContrast mb-4">Canaletas Cerâmicas</h3>
+                    <p class="text-gray-600 leading-relaxed mb-4">
+                        Oferecemos uma ampla gama de blocos cerâmicos e canaletas para atender a todas as necessidades do seu projeto.
+                        As canaletas são ideais para vergas, contravergas e cintas de amarração, garantindo a solidez da estrutura.
+                    </p>
+                </div>
+                <img src="https://placehold.co/600x350/E65100/FFFFFF?text=Canaletas+Ceramicas" alt="Imagem de Canaletas Cerâmicas" class="rounded-md w-full h-auto object-cover mt-4">
+            </div>
+
+            <!-- Bloco 3: Bloco de Vedação -->
+            <div class="bg-lightBackground p-6 rounded-lg shadow-sm border border-richBrown product-block-content">
+                <div>
+                    <h3 class="text-2xl font-bold text-darkContrast mb-4">Blocos de Vedação</h3>
+                    <p class="text-gray-600 leading-relaxed mb-4">
+                        Perfeitos para paredes divisórias e fechamentos, nossos blocos de vedação combinam leveza e isolamento,
+                        facilitando a construção e reduzindo o peso estrutural da obra. Disponíveis em diversas medidas.
+                    </p>
+                </div>
+                <img src="https://placehold.co/600x350/7A4A35/FFFFFF?text=Blocos+de+Vedacao" alt="Imagem de Blocos de Vedação" class="rounded-md w-full h-auto object-cover mt-4">
+            </div>
+
+            <!-- Bloco 4: Meio Bloco e Bloco de Canto -->
+            <div class="bg-lightBackground p-6 rounded-lg shadow-sm border border-richBrown product-block-content">
+                <div>
+                    <h3 class="text-2xl font-bold text-darkContrast mb-4">Meio Bloco e Bloco de Canto</h3>
+                    <p class="text-gray-600 leading-relaxed mb-4">
+                        Para otimizar o corte e o rendimento na obra, oferecemos meio blocos e blocos de canto.
+                        Esses produtos garantem maior agilidade na execução e minimizam o desperdício de material.
+                    </p>
+                </div>
+                <img src="https://placehold.co/600x350/7A4A35/FFFFFF?text=Meio+Bloco+e+Canto" alt="Imagem de Meio Bloco e Bloco de Canto" class="rounded-md w-full h-auto object-cover mt-4">
+            </div>
+
+            <!-- Bloco 5: Blocos para Alvenaria de Vedação -->
+            <div class="bg-lightBackground p-6 rounded-lg shadow-sm border border-richBrown product-block-content">
+                <div>
+                    <h3 class="text-2xl font-bold text-darkContrast mb-4">Blocos para Alvenaria de Vedação</h3>
+                    <p class="text-gray-600 leading-relaxed mb-4">
+                        Ideais para projetos que buscam um acabamento superior e versatilidade na alvenaria.
+                        Estes blocos são fabricados com precisão, facilitando o assentamento e o acabamento final.
+                    </p>
+                </div>
+                <img src="https://placehold.co/600x350/E65100/FFFFFF?text=Blocos+Diversos" alt="Imagem de Blocos para Alvenaria de Vedação" class="rounded-md w-full h-auto object-cover mt-4">
+            </div>
+
+            <!-- Bloco 6: Blocos para Fundação e Baldrames -->
+            <div class="bg-lightBackground p-6 rounded-lg shadow-sm border border-richBrown product-block-content">
+                <div>
+                    <h3 class="text-2xl font-bold text-darkContrast mb-4">Blocos para Fundação e Baldrames</h3>
+                    <p class="text-gray-600 leading-relaxed mb-4">
+                        Nossos blocos específicos para fundação e baldrames garantem a resistência e a estabilidade necessárias
+                        para a base de qualquer edificação, oferecendo segurança desde o início da obra.
+                    </p>
+                </div>
+                <img src="https://placehold.co/600x350/7A4A35/FFFFFF?text=Blocos+Fundacao" alt="Imagem de Blocos para Fundação e Baldrames" class="rounded-md w-full h-auto object-cover mt-4">
+            </div>
+
+        </section>
+
+        <!-- Seção Contato -->
+        <section id="contato" class="py-12 border-t border-gray-200 mt-12">
+            <h2 class="text-4xl font-bold text-primaryOrange text-center mb-8">Entre em Contato</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+                <!-- Informações de Contato à Esquerda -->
+                <div class="bg-lightBackground p-6 rounded-lg shadow-sm border border-richBrown text-gray-700">
+                    <h3 class="text-2xl font-bold text-darkContrast mb-4">Nossos Dados</h3>
+                    <p class="mb-2"><span class="font-semibold">Endereço:</span> Sítio Capivari, s/n</p>
+                    <p class="mb-2">Rua Hélio Pinto Ferreira - Próximo ao Residencial Porto Seguro</p>
+                    <p class="mb-2">Campinas, SP</p>
+                    <p class="mb-2"><span class="font-semibold">Telefone:</span> (19) 99336-9208</p>
+                    <p class="mb-2">Email: olariafriburgo@gmail.com</p>
+                    <div class="mt-6">
+                        <h3 class="text-2xl font-bold text-darkContrast mb-4">Horário de Atendimento</h3>
+                        <p>Segunda a Sexta: 7h00 - 16h00</p>
+                        <p>Sábado: 7h00 - 11h00</p>
+                    </div>
+                </div>
+
+                <!-- Formulário de Contato à Direita -->
+                <div class="bg-lightBackground p-6 rounded-lg shadow-sm border border-richBrown">
+                    <h3 class="text-2xl font-bold text-darkContrast mb-4">Envie sua Mensagem</h3>
+                    <form action="#" method="POST">
+                        <label for="name" class="block text-gray-700 text-sm font-bold mb-2">Nome Completo:</label>
+                        <input type="text" id="name" name="name" class="form-input" placeholder="Seu nome" required>
+
+                        <label for="email" class="block text-gray-700 text-sm font-bold mb-2">Email:</label>
+                        <input type="email" id="email" name="email" class="form-input" placeholder="seuemail@exemplo.com" required>
+
+                        <label for="phone" class="block text-gray-700 text-sm font-bold mb-2">Telefone (opcional):</label>
+                        <input type="tel" id="phone" name="phone" class="form-input" placeholder="(XX) XXXX-XXXX">
+
+                        <label for="message" class="block text-gray-700 text-sm font-bold mb-2">Mensagem:</label>
+                        <textarea id="message" name="message" rows="5" class="form-input resize-y" placeholder="Descreva sua necessidade ou dúvida" required></textarea>
+
+                        <button type="submit" class="w-full bg-primaryOrange text-white text-xl font-semibold py-3 px-8 rounded-full shadow-lg hover:bg-accentOrange transition-all duration-300 transform hover:scale-105 mt-4">
+                            Enviar Mensagem
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Rodapé (Footer) -->
+    <footer id="contato-footer" class="bg-richBrown text-white p-8 mt-8 rounded-t-lg">
+        <div class="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
+            <!-- Coluna 1: Informações de Contato -->
+            <div>
+                <h4 class="text-xl font-bold mb-4 text-primaryOrange">CONTATO</h4>
+                <p class="mb-2">Sítio Capivari, s/n</p>
+                <p class="mb-2">Rua Hélio Pinto Ferreira - Próximo ao Residencial Porto Seguro</p>
+                <p class="mb-2">Campinas, SP</p>
+                <p class="mb-2">Telefone: (19) 99336-9208</p>
+                <p class="mb-2">Email: olariafriburgo@gmail.com</p>
+            </div>
+
+            <!-- Coluna 2: Links Rápidos -->
+            <div>
+                <h4 class="text-xl font-bold mb-4 text-primaryOrange">LINKS RÁPIDOS</h4>
+                <ul>
+                    <li class="mb-2"><a href="#home" class="hover:text-accentOrange transition-colors duration-200">Home</a></li>
+                    <li class="mb-2"><a href="#empresa" class="hover:text-accentOrange transition-colors duration-200">Empresa</a></li>
+                    <li class="mb-2"><a href= "produtos.html" class="hover:text-accentOrange transition-colors duration-200">Produtos</a></li>
+                    <li class="mb-2"><a href="#contato" class="hover:text-accentOrange transition-colors duration-200">Orçamento</a></li>
+                    <li class="mb-2"><a href="#contato" class="hover:text-accentOrange transition-colors duration-200">Contato</a></li>
+                </ul>
+            </div>
+
+            <!-- Coluna 3: Sobre Nós / Redes Sociais -->
+            <div>
+                <h4 class="text-xl font-bold mb-4 text-primaryOrange">SOBRE NÓS</h4>
+                <p class="mb-4">
+                    Cerâmica Friburgo: mais de 30 anos de excelência na fabricação de blocos cerâmicos de alta qualidade para sua construção.
+                </p>
+                <div class="flex justify-center md:justify-start space-x-4 mt-4">
+                    <a href="https://www.facebook.com/seuperfil" target="_blank" aria-label="Facebook" class="text-white hover:text-accentOrange transition-colors duration-200">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                            <path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33V22C18.343 21.128 22 16.991 22 12z" clip-rule="evenodd" />
+                        </svg>
+                    </a>
+                    <a href="https://www.instagram.com/seuperfil" target="_blank" aria-label="Instagram" class="text-white hover:text-accentOrange transition-colors duration-200">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                            <path fill-rule="evenodd" d="M12 4c-2.473 0-2.827.01-3.847.058C7.053 4.195 6.002 4.49 5.097 5.097a4.996 4.996 0 00-2.43 2.43C2.49 8.002 2.195 9.053 2.058 10.153 2.01 11.173 2 11.527 2 12s.01 2.827.058 3.847c.145 1.1.44 2.152 1.047 3.057a4.996 4.996 0 002.43 2.43c.905.607 1.957.902 3.057 1.047 1.02.048 1.374.058 2.394.058s1.374-.01 2.394-.058c1.1-.145 2.152-.44 3.057-1.047a4.996 4.996 0 002.43-2.43c.607-.905.902-1.957 1.047-3.057.048-1.02.058-1.374.058-2.394s-.01-2.827-.058-3.847c-.145-1.1-.44-2.152-1.047-3.057a4.996 4.996 0 00-2.43-2.43C15.998 4.195 14.947 4.49 13.847 4.586 12.827 4.54 12.473 4.53 12 4zm0 2c.983 0 1.25.003 2.25.048 1.002.13 1.792.35 2.348.887a2.986 2.986 0 011.066 1.066c.537.556.757 1.346.887 2.348.045 1 .048 1.267.048 2.25s-.003 1.25-.048 2.25c-.13 1.002-.35 1.792-.887 2.348a2.986 2.986 0 01-1.066 1.066c-.556.537-1.346.757-2.348.887-1 .045-1.267.048-2.25.048s-1.25-.003-2.25-.048c-1.002-.13-1.792-.35-2.348-.887a2.986 2.986 0 01-1.066-1.066c-.537-.556-.757-1.346-.887-2.348-.045-1-.048-1.267-.048-2.25s.003-1.25.048-2.25c.13-1.002.35-1.792.887-2.348a2.986 2.986 0 011.066-1.066c.556-.537 1.346-.757 2.348-.887 1-.045 1.267-.048 2.25-.048zm0 2a4 4 0 100 8 4 4 0 000-8zm0 2a2 2 0 110 4 2 2 0 010-4zm6.5-4c0-.75-.25-1.5-.75-1.5s-.75.75-.75 1.5.25 1.5.75 1.5.75-.75.75-1.5z" clip-rule="evenodd" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Linha de Copyright -->
+        <div class="border-t border-gray-700 pt-6 mt-8 text-center text-sm">
+            <p>&copy; 2023 Cerâmica Friburgo. Todos os direitos reservados.</p>
+            <p class="mt-2">Desenvolvido com carinho para você.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
