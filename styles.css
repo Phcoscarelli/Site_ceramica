@@ -24,10 +24,8 @@
             background-color: white;
         }
         .product-block-content {
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            height: 100%;
+             width: 850px;
+            margin: 0 auto;
         }
         .form-input {
             width: 100%;
